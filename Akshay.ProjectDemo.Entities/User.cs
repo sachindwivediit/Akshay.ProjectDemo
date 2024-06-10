@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace Akshay.ProjectDemo.Entities
 {
-    public class Country
+    public class User
     {
         public int Id { get; set; }
-        public string Name { get; set; } = "Default Country";
-
-        //Country have multipe states
-        public ICollection<State> states { get; set; } = new HashSet<State>();
+        public string Name { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
     }
 }

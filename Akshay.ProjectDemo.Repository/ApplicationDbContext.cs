@@ -17,5 +17,6 @@ namespace Akshay.ProjectDemo.Repository
         public DbSet<Country> countries { get; set; }
         public DbSet<State> states { get; set; }
         public DbSet<City> cities { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }

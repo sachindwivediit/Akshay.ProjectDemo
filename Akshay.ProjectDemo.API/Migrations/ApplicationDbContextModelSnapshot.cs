@@ -40,7 +40,7 @@ namespace Akshay.ProjectDemo.API.Migrations
 
                     b.HasIndex("StateId");
 
-                    b.ToTable("cities", (string)null);
+                    b.ToTable("cities");
                 });
 
             modelBuilder.Entity("Akshay.ProjectDemo.Entities.Country", b =>
@@ -51,16 +51,13 @@ namespace Akshay.ProjectDemo.API.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("Code")
-                        .HasColumnType("int");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("countries", (string)null);
+                    b.ToTable("countries");
                 });
 
             modelBuilder.Entity("Akshay.ProjectDemo.Entities.State", b =>
@@ -82,7 +79,32 @@ namespace Akshay.ProjectDemo.API.Migrations
 
                     b.HasIndex("CountryId");
 
-                    b.ToTable("states", (string)null);
+                    b.ToTable("states");
+                });
+
+            modelBuilder.Entity("Akshay.ProjectDemo.Entities.User", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("Akshay.ProjectDemo.Entities.City", b =>

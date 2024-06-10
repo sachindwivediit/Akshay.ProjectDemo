@@ -1,5 +1,6 @@
 ﻿using Akshay.ProjectDemo.Entities;
 using Akshay.ProjectDemo.Repository.Interface;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -7,6 +8,7 @@ namespace Akshay.ProjectDemo.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class CountryController : ControllerBase
     {
         private readonly IGenericRepo<Country> _repository;
